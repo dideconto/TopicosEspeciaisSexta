@@ -8,3 +8,4 @@ console.log("Área: " + area + " m2");
 
 //Interpolação - Template Literals
 console.log(`Área: ${area} m2`);
+console.log("Segundo commit");
