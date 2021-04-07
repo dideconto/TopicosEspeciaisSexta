@@ -1,0 +1,17 @@
+###
+GET http://localhost:3000
+
+###
+GET http://localhost:3000/ciclo/listar/
+
+###
+GET http://localhost:3000/ciclo/listar/123/asd
+
+###
+POST http://localhost:3000/usuario/cadastrar
+Content-Type: application/json
+
+{
+    "login": "diogo",
+    "senha": "123"    
+}
