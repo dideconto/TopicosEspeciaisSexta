@@ -9,6 +9,25 @@ POST http://localhost:3000/ciclo/cadastrar
 Content-Type: application/json
 
 {
-    "login": "diogo",
-    "senha": "123"    
+    "data" : "2021-04-16" ,
+    "creditos" : [
+        {
+            "nome" : "Salário",
+            "valor" : 5000
+        },{
+            "nome" : "Investimento",
+            "valor" : 50
+        }
+    ],
+    "debitos" : [
+        {
+            "nome" : "Salário",
+            "valor" : 5000,
+            "status" : "PAGO"
+        },{
+            "nome" : "Investimento",
+            "valor" : 50,
+            "status" : "AGENDADO"
+        }
+    ]
 }
