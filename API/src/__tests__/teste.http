@@ -2,14 +2,41 @@
 GET http://localhost:3000/ciclo/listar/
 
 ###
-GET http://localhost:3000/ciclo/listar/123/asd
+GET http://localhost:3000/ciclo/listar/6082d36fafdbb332881a0a34
 
-###
+### Requisição correta
 POST http://localhost:3000/ciclo/cadastrar
 Content-Type: application/json
 
 {
     "data" : "2021-04-16" ,
+    "creditos" : [
+        {
+            "nome" : "Salário",
+            "valor" : 5000
+        },{
+            "nome" : "Investimento",
+            "valor" : 50
+        }
+    ],
+    "debitos" : [
+        {
+            "nome" : "Salário",
+            "valor" : 5000,
+            "status" : "PAGO"
+        },{
+            "nome" : "Investimento",
+            "valor" : 50,
+            "status" : "AGENDADO"
+        }
+    ]
+}
+
+### Requisição com erro
+POST http://localhost:3000/ciclo/cadastrar
+Content-Type: application/json
+
+{
     "creditos" : [
         {
             "nome" : "Salário",

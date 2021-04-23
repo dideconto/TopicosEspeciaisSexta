@@ -8,7 +8,7 @@ const cicloController = new CicloController();
 //GET  -> Solicita um determinado recurso do servidor
 //POST -> Envia um recurso para o servidor
 router.get("/ciclo/listar", cicloController.listar);
-router.get("/ciclo/listar/:param1/:param2", cicloController.buscarPorId);
+router.get("/ciclo/listar/:id", cicloController.buscarPorId);
 router.post("/ciclo/cadastrar", cicloController.cadastrar);
 
 export { router };
