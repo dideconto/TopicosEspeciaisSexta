@@ -1,5 +1,5 @@
+import { CicloService } from "./../../../services/ciclo.service";
 import { Component, OnInit } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
 import { Ciclo } from "src/app/models/Ciclo";
 
 @Component({
@@ -8,15 +8,13 @@ import { Ciclo } from "src/app/models/Ciclo";
   styleUrls: ["./listar.component.css"],
 })
 export class ListarComponent implements OnInit {
+  ciclos: Ciclo[] = [];
 
-  ciclos : Ciclo[] = [];
+  constructor(private service: CicloService) {}
 
-  constructor(private http: HttpClient) {
-    //Observable<Ciclo[]>
-    http.get<Ciclo[]>("http://localhost:3000/ciclo/listar/").subscribe((ciclos) => {      
+  ngOnInit(): void {
+    this.service.listar().subscribe((ciclos) => {
       this.ciclos = ciclos;
     });
   }
-
-  ngOnInit(): void {}
 }
