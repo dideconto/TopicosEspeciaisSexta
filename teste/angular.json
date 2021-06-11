@@ -3,12 +3,12 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "FRONT": {
+    "teste": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "inlineTemplate": false,
-          "inlineStyle": false,
+          "inlineTemplate": true,
+          "inlineStyle": true,
           "skipTests": true
         },
         "@schematics/angular:class": {
@@ -40,7 +40,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/FRONT",
+            "outputPath": "dist/teste",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,7 +50,6 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -92,10 +91,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "FRONT:build:production"
+              "browserTarget": "teste:build:production"
             },
             "development": {
-              "browserTarget": "FRONT:build:development"
+              "browserTarget": "teste:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -103,11 +102,11 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "FRONT:build"
+            "browserTarget": "teste:build"
           }
         }
       }
     }
   },
-  "defaultProject": "FRONT"
+  "defaultProject": "teste"
 }

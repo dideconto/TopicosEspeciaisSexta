@@ -6,18 +6,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/template/header/header.component';
 import { CadastrarComponent } from './components/views/cadastrar/cadastrar.component';
 import { ListarComponent } from './components/views/listar/listar.component';
+import { ContentComponent } from './components/template/content/content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     CadastrarComponent,
-    ListarComponent
+    ListarComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +34,13 @@ import { ListarComponent } from './components/views/listar/listar.component';
     FormsModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
