@@ -1,18 +1,25 @@
-<a routerLink="/ciclo/cadastrar">Novo ciclo</a>
+<a mat-raised-button color="warn" routerLink="/ciclo/cadastrar">
+  <mat-icon>event</mat-icon>
+  Novo Ciclo
+</a>
 
-<table>
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Data do Ciclo de Pagamento</th>
-            <th>Criado em</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let ciclo of ciclos">
-            <td> {{ ciclo._id }}</td>
-            <td> {{ ciclo.data |  date: "MMMM - yyyy" }}</td>
-            <td> {{ ciclo.createdAt |  date: "dd/MM/yyyy hh:mm:ss" }}</td>
-        </tr>
-    </tbody>
+<table mat-table [dataSource]="ciclos" class="mat-elevation-z8">
+  
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> # </th>
+    <td mat-cell *matCellDef="let ciclo"> {{ciclo._id}} </td>
+  </ng-container>
+  
+  <ng-container matColumnDef="data">
+    <th mat-header-cell *matHeaderCellDef> Data do Ciclo </th>
+    <td mat-cell *matCellDef="let ciclo"> {{ ciclo.data | date: "MMMM - yyyy" }} </td>
+  </ng-container>
+  
+  <ng-container matColumnDef="criadoEm">
+    <th mat-header-cell *matHeaderCellDef> Criado em </th>
+    <td mat-cell *matCellDef="let ciclo"> {{ ciclo.createdAt | date: "dd/MM/yyyy HH:mm:ss" }} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>

@@ -1,6 +1,7 @@
 import { CicloService } from "./../../../services/ciclo.service";
+import { Ciclo } from "../../../models/Ciclo";
 import { Component, OnInit } from "@angular/core";
-import { Ciclo } from "src/app/models/Ciclo";
+import { MatTableDataSource } from "@angular/material/table";
 
 @Component({
   selector: "app-listar",
@@ -8,13 +9,14 @@ import { Ciclo } from "src/app/models/Ciclo";
   styleUrls: ["./listar.component.css"],
 })
 export class ListarComponent implements OnInit {
-  ciclos: Ciclo[] = [];
+  ciclos!: MatTableDataSource<Ciclo>;
+  displayedColumns: string[] = ['id', 'data', 'criadoEm'];
 
   constructor(private service: CicloService) {}
 
   ngOnInit(): void {
     this.service.listar().subscribe((ciclos) => {
-      this.ciclos = ciclos;
+      this.ciclos = new MatTableDataSource<Ciclo>(ciclos);
     });
   }
 }
